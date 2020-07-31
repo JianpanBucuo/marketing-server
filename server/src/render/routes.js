@@ -11,7 +11,8 @@ export default [
                 path: '/view',
                 component: Home,
                 exact: true,
-                key: 'home'
+                key: 'home',
+                loadData: Home.loadData
             },
             {
                 path: '/view/about',

@@ -3,7 +3,6 @@ import { renderRoutes } from 'react-router-config'
 import { connect } from 'react-redux'
 const App = (props) => {
     const { a } = props
-    console.log(a)
     return (
         <div>
             <div onClick={() => alert(1)}> 111</div>
@@ -12,7 +11,6 @@ const App = (props) => {
     )
 }
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         a: state.main.mainData
     }

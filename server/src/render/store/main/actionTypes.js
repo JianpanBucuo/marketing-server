@@ -1,0 +1,1 @@
+export const getGoodsListType = 'GET_GOODS_LIST_TYPE'
