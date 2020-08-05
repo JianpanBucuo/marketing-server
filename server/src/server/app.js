@@ -18,7 +18,7 @@ app.use(bodyparser({
 }))
 app.use(json())
 app.use(logger())
-// app.use(require('koa-static')(resolve('public')))
+app.use(require('koa-static')(resolve('public')))
 app.use(require('koa-static')(resolve('client-dist')))
 
 // logger

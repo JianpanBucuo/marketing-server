@@ -1,11 +1,27 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getGoodsList } from '../../store/main/actions'
+// import './style.css'
 class Home extends Component {
     render () {
         return (
-            <h3>home</h3>
+            <div>
+                <h3>home</h3>
+                {this.renderList()}
+            </div>
         )
+    }
+    renderList () {
+        const { mainData } = this.props
+        console.log(this.props)
+        return mainData.map((v, i) => {
+            return (
+                <div key={v.sortNo}>
+                    <img src={v.commdty.listImageUrl} />
+                    <p><span>{v.commdty.name}</span><span>{v.commdty.price}</span></p>
+                </div >
+            )
+        })
     }
 }
 Home.loadData = (store) => {
@@ -13,6 +29,7 @@ Home.loadData = (store) => {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state.main.mainData)
     return {
         mainData: state.main.mainData
     }
