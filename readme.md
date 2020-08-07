@@ -32,10 +32,32 @@
 ### 各项指标
 
 分析页面中与时间相关的信息`Performance.timing`
+
 姓名 | 技能
 |-|-|
 | navigationStart | 从同一个浏览器的上一个页面卸载uload结束时的时间戳(精确到毫秒) |
 | uploadEventStart | upload事件执行时的时间戳。如果没有上一个页面，或者如果先前的页面或所需的重定向之一不是同一个来源，这个值会返回0 |
+| uploadEventEnd | upload事件执行完的时间戳。如果没有上一个页面，或所需的重定向之一不是同一个来源，这个值会返回0 |
+| redirectStart | 第一个HTTP重定向开始时得时间戳。如果没有上一个页面，或所需的重定向之一不是同一个来源，这个值会返回0  |
+| redirectEnd | 最后一个HTTP重定向完成时的时间戳(HTTP响应的最后一个字节直接被接收到的时间) |
+| fetchStart | 浏览器准备好使用HTTP请求来获取(fetch)文档的时间戳。这个时间点会在检查任何应用缓存之前 |
+| domainLookupStart | 域名查询开始的时间戳。如果使用了持续连接，或者这个信息存储到了缓存或者本地资源上，这个值将和`Performance.fetchStart`一致 |
+| domainLookupEnd | 域名查询结束时的时间戳。如果使用了持续连接，或者这个信息存储到了缓存或者本地资源上，这个值将和`Performance.fetchStart`一致 |
+| connectStart | HTTP请求开始向服务器发送时的时间戳（TCP）。如果使用了持续连接，则返回值与`fetchStart`一致|
+| connectEnd | 浏览器与服务器之间的连接建立时的时间戳（TCP）。如果使用了持续连接，则返回值与`fetchStart`一致 |
+| secureConnectionStart | 浏览器与服务器开始安全连接的握手时的时间戳。如果当前网页不要求安全连接，则返回0 |
+| requestStart | 浏览器向服务器发出HTTP请求时（或开始读取本地缓存时）的时间戳 |
+| responseStart | 浏览器从服务器收到（或从本地缓存读取，或从本地资源读取）第一个字节时的时间戳 |
+| responseEnd | 浏览器从服务器收到（或从本地缓存读取，或从本地资源读取）最后一个字节时的时间戳 |
+| domLoading | 当前网页DOM结构开始解析时的时间戳 (Document.readyState属性变为loading，响应的readystatechange事件触发时) |
+| domInteractive | 当前网页DOM结构结束解析，开始加载内嵌资源时的时间戳（Document.readyState属性变为interactive，响应的readystatechange事件触发时） |
+| domContentLoadedEventStart | 当解析器发送DOMContentLoaded事件，即所有需要被执行的脚本已经被解析时的时间戳 |
+| domContentLoadedEventEnd | 当所有需要立即执行的脚本已经被执行时的时间戳 |
+| domComplete | 当文档解析完成，即Document.readyState变为complete且对应的readystatechang被触发时的时间戳 |
+| loadEventStart | 该页面下load事件被发送时的时间戳。如果这个事件还未被发送，它的值将会是0 |
+| loadEventEnd | load事件结束，即加载事件完成时的时间戳 |
+|  |  |
+
 ### 从输入url到页面的展示发生了什么
 
 #### 步骤
