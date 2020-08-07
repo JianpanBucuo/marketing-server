@@ -10,6 +10,23 @@ const serverConfig = {
     output: {
         filename: 'index.js',
         path: resolve(__dirname, 'server-dist')
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css?$/,
+                use: ['isomorphic-style-loader', {
+                    loader: 'css-loader',
+                    options: {
+                        importLoaders: 1,
+                        // modules: {
+                        //     localIdentName: '[name]__[local]--[hash:base64:5]'
+                        // },
+                        modules: true
+                    }
+                }]
+            }
+        ]
     }
 }
 module.exports = merge(config, serverConfig)

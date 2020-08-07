@@ -11,26 +11,8 @@ module.exports = {
                     // 编译规则
                     presets: ['@babel/preset-react']
                 }
-            },
-            {
-                test: /\.css?$/,
-                use: ['style-loader', {
-                    loader: 'css-loader',
-                    options: {
-                        importLoaders: 1,
-                        modules: true,
-                        localIdentName: '[name]_[local]'
-                    }
-                }]
-
             }
         ]
-    },
-    // plugins: [
-    //     new HTMLWebpackPlugin({
-    //         title: 'React app',
-    //         filename: 'index.html',
-    //         template: './src/index.html'
-    //     })
-    // ]
+    }
+
 }
